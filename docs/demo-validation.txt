@@ -1,0 +1,4 @@
+Production Java 17 compilation succeeded with -Xlint:all.
+Parameterized runs passed for (threads, updates) = (3,100), (4,1000), (6,17).
+Every event count was exact; all JSON outputs were parsed independently with Python json.loads.
+Each process exited within 30 seconds with zero listener failures.

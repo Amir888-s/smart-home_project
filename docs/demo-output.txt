@@ -1,0 +1,13 @@
+SMART HOME | Assignment 6 | Topic 7
+Producer threads: 3, producers: 3
+DEVICE_STATE received: 300
+ENERGY_SUMMARY received: 300
+SECURITY_REPORT received: 300
+AUTOMATION_COMMAND received: 50
+Audit log entries: 950
+Final power: 1017.0 W
+Security findings: [lock: door is unlocked]
+Devices rated above 100 W: 1
+Inventory: {Camera=1, Lamp=2, SmartLock=1, SmokeDetector=1, Thermostat=1}
+JSON: {"type":"Home","id":"home","name":"Smart home","rooms":[{"type":"Room","id":"living","name":"Living room","devices":[{"type":"Lamp","id":"lamp","name":"Ceiling lamp","watts":10.0,"on":false},{"type":"Thermostat","id":"heat","name":"Heating","watts":1000.0,"heating":true,"targetCelsius":28.0}]},{"type":"Room","id":"entry","name":"Entrance","devices":[{"type":"Camera","id":"camera","name":"Entry camera","watts":8.0,"on":true,"recording":true},{"type":"SmartLock","id":"lock","name":"Front lock","watts":2.0,"locked":false}]},{"type":"Room","id":"bed","name":"Bedroom","devices":[{"type":"Lamp","id":"bed-lamp","name":"Bedside lamp","watts":6.0,"on":true},{"type":"SmokeDetector","id":"smoke","name":"Bedroom smoke detector","watts":1.0,"alarm":false}]}]}
+Listener failures: 0

@@ -1,0 +1,12 @@
+PASS hand calculated power 1021 W
+PASS whole tree audit
+PASS high power filter
+PASS inventory across five leaf types
+PASS nested JSON
+PASS unsubscribe inside handler
+PASS room event to audit report
+PASS observer to subject energy chain
+PASS 4 threads x 1000 events gives exactly 4000 deliveries
+PASS graceful shutdown leaves no executor threads
+PASS zero listener failures
+Verified 11 checks with JDK 17 only

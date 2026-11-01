@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1740" height="1660" viewBox="0 0 1740 1660">
+<defs><marker id="tri" viewBox="0 0 20 20" refX="19" refY="10" markerWidth="15" markerHeight="15" orient="auto-start-reverse"><path d="M 1 1 L 19 10 L 1 19 Z" fill="white" stroke="#334155" stroke-width="1.7"/></marker><marker id="arrow" viewBox="0 0 20 20" refX="19" refY="10" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 1 1 L 19 10 L 1 19" fill="none" stroke="#334155" stroke-width="2"/></marker><marker id="diamond" viewBox="0 0 20 20" refX="1" refY="10" markerWidth="16" markerHeight="16" orient="auto"><path d="M 1 10 L 10 1 L 19 10 L 10 19 Z" fill="#334155"/></marker></defs>
+<rect width="1740" height="1660" fill="white"/>
+<text x="38" y="52" font-family="DejaVu Sans, sans-serif" font-size="36" fill="#0f172a" font-weight="bold">Observer events and application wiring</text>
+<text x="38" y="90" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#334155" font-weight="normal">Push delivery   •   immutable events   •   typed subscriptions   •   snapshot iteration</text>
+<rect x="35" y="125" width="370" height="140" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M36,126 H404 V192 H36 Z" fill="#eaf1f7"/><path d="M35,193 H405" stroke="#64748b" stroke-width="1.5"/>
+<text x="49" y="148" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«interface»</text>
+<text x="49" y="178" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">HomeEvent</text>
+<text x="49" y="221" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">+type(): EventType</text>
+<rect x="535" y="125" width="420" height="140" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M536,126 H954 V192 H536 Z" fill="#eaf1f7"/><path d="M535,193 H955" stroke="#64748b" stroke-width="1.5"/>
+<text x="549" y="148" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«enum»</text>
+<text x="549" y="178" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">EventType</text>
+<text x="549" y="221" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">DEVICE_STATE, ENERGY_SUMMARY</text>
+<text x="549" y="247" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#334155" font-weight="normal">SECURITY_REPORT, AUTOMATION_COMMAND</text>
+<polyline points="405,195 535,195" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#arrow)" />
+<text x="435" y="177" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#334155" font-weight="normal">type()</text>
+<rect x="35" y="345" width="380" height="140" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M36,346 H414 V412 H36 Z" fill="#f0f4ed"/><path d="M35,413 H415" stroke="#64748b" stroke-width="1.5"/>
+<text x="49" y="368" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«record»</text>
+<text x="49" y="398" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">DeviceStateChanged</text>
+<text x="49" y="441" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#334155" font-weight="normal">sourceId, version, room, deviceId</text>
+<polyline points="225,345 225,300 220,300 220,265" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#tri)" />
+<rect x="465" y="345" width="380" height="140" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M466,346 H844 V412 H466 Z" fill="#f0f4ed"/><path d="M465,413 H845" stroke="#64748b" stroke-width="1.5"/>
+<text x="479" y="368" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«record»</text>
+<text x="479" y="398" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">EnergySummary</text>
+<text x="479" y="441" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">wattsBySource, totalWatts</text>
+<polyline points="655,345 655,300 220,300 220,265" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#tri)" />
+<rect x="895" y="345" width="380" height="140" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M896,346 H1274 V412 H896 Z" fill="#f0f4ed"/><path d="M895,413 H1275" stroke="#64748b" stroke-width="1.5"/>
+<text x="909" y="368" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«record»</text>
+<text x="909" y="398" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">SecurityReport</text>
+<text x="909" y="441" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">roomId, sourceVersion, findings</text>
+<polyline points="1085,345 1085,300 220,300 220,265" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#tri)" />
+<rect x="1325" y="345" width="380" height="140" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M1326,346 H1704 V412 H1326 Z" fill="#f0f4ed"/><path d="M1325,413 H1705" stroke="#64748b" stroke-width="1.5"/>
+<text x="1339" y="368" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«record»</text>
+<text x="1339" y="398" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">AutomationCommand</text>
+<text x="1339" y="441" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">deviceId, action</text>
+<polyline points="1515,345 1515,300 220,300 220,265" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#tri)" />
+<rect x="35" y="565" width="445" height="155" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M36,566 H479 V632 H36 Z" fill="#eaf1f7"/><path d="M35,633 H480" stroke="#64748b" stroke-width="1.5"/>
+<text x="49" y="588" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«interface»</text>
+<text x="49" y="618" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#0f172a" font-weight="bold">Subject&lt;E extends HomeEvent&gt;</text>
+<text x="49" y="661" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">+subscribe(type, observer)</text>
+<text x="49" y="687" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">+unsubscribe(type, observer)</text>
+<text x="49" y="713" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">+publish(event)</text>
+<rect x="670" y="565" width="390" height="155" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M671,566 H1059 V632 H671 Z" fill="#eaf1f7"/><path d="M670,633 H1060" stroke="#64748b" stroke-width="1.5"/>
+<text x="684" y="588" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«interface»</text>
+<text x="684" y="618" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#0f172a" font-weight="bold">Observer&lt;E extends HomeEvent&gt;</text>
+<text x="684" y="661" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">+onEvent(event)</text>
+<polyline points="480,640 670,640" fill="none" stroke="#334155" stroke-width="2"  marker-end="url(#arrow)" />
+<text x="487" y="620" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#334155" font-weight="normal">listeners 0..*</text>
+<rect x="35" y="850" width="445" height="175" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M36,851 H479 V917 H36 Z" fill="#eaf1f7"/><path d="M35,918 H480" stroke="#64748b" stroke-width="1.5"/>
+<text x="49" y="873" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«class»</text>
+<text x="49" y="903" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">ThreadSafeSubject&lt;E&gt;</text>
+<text x="49" y="946" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">-listeners: Map&lt;Type, COWList&gt;</text>
+<text x="49" y="972" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#334155" font-weight="normal">-errorSink: Consumer&lt;RuntimeException&gt;</text>
+<text x="49" y="998" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">snapshot publish; no subject lock</text>
+<polyline points="258,850 258,720" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#tri)" />
+<rect x="35" y="1140" width="445" height="205" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M36,1141 H479 V1207 H36 Z" fill="#eaf1f7"/><path d="M35,1208 H480" stroke="#64748b" stroke-width="1.5"/>
+<text x="49" y="1163" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«class»</text>
+<text x="49" y="1193" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">DeviceSource</text>
+<text x="49" y="1236" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">-sourceId: String</text>
+<text x="49" y="1262" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">-current: AtomicReference&lt;VersionedRoom&gt;</text>
+<text x="49" y="1288" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#334155" font-weight="normal">+change(device): DeviceStateChanged</text>
+<text x="49" y="1314" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">+snapshot(): Room</text>
+<rect x="545" y="1140" width="475" height="205" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M546,1141 H1019 V1207 H546 Z" fill="#eaf1f7"/><path d="M545,1208 H1020" stroke="#64748b" stroke-width="1.5"/>
+<text x="559" y="1163" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«class»</text>
+<text x="559" y="1193" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">EnergyTracker</text>
+<text x="559" y="1236" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">-readings: AtomicReference&lt;Map&gt;</text>
+<text x="559" y="1262" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">-powerVisitor: PowerUseVisitor</text>
+<text x="559" y="1288" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">+onEvent(event)</text>
+<text x="559" y="1314" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">private record Reading(version, watts)</text>
+<polyline points="258,1140 258,1025" fill="none" stroke="#334155" stroke-width="2"  marker-end="url(#tri)" />
+<polyline points="600,1140 600,1080 370,1080 370,1025" fill="none" stroke="#334155" stroke-width="2"  marker-end="url(#tri)" />
+<polyline points="780,1140 1085,1140 1085,750 865,750 865,720" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#tri)" />
+<rect x="1175" y="565" width="520" height="155" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M1176,566 H1694 V632 H1176 Z" fill="#eaf1f7"/><path d="M1175,633 H1695" stroke="#64748b" stroke-width="1.5"/>
+<text x="1189" y="588" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«class»</text>
+<text x="1189" y="618" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">MobileApp</text>
+<text x="1189" y="661" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">-counts: Map&lt;Type, AtomicLong&gt;</text>
+<text x="1189" y="687" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">+count(type): long</text>
+<polyline points="1175,643 1110,643 1110,645 1060,645" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#tri)" />
+<rect x="1175" y="775" width="520" height="155" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M1176,776 H1694 V842 H1176 Z" fill="#eaf1f7"/><path d="M1175,843 H1695" stroke="#64748b" stroke-width="1.5"/>
+<text x="1189" y="798" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«class»</text>
+<text x="1189" y="828" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">AuditLog</text>
+<text x="1189" y="871" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">-events: ConcurrentLinkedQueue</text>
+<text x="1189" y="897" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">+snapshot(): List&lt;HomeEvent&gt;</text>
+<polyline points="1175,853 1110,853 1110,645 1060,645" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#tri)" />
+<rect x="1175" y="985" width="520" height="155" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M1176,986 H1694 V1052 H1176 Z" fill="#eaf1f7"/><path d="M1175,1053 H1695" stroke="#64748b" stroke-width="1.5"/>
+<text x="1189" y="1008" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«class»</text>
+<text x="1189" y="1038" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">SecurityAlarm</text>
+<text x="1189" y="1081" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">-reports: Subject&lt;HomeEvent&gt;</text>
+<text x="1189" y="1107" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">-auditFactory: Supplier&lt;AuditVisitor&gt;</text>
+<polyline points="1175,1063 1110,1063 1110,645 1060,645" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#tri)" />
+<rect x="1175" y="1195" width="520" height="155" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M1176,1196 H1694 V1262 H1176 Z" fill="#eaf1f7"/><path d="M1175,1263 H1695" stroke="#64748b" stroke-width="1.5"/>
+<text x="1189" y="1218" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«class»</text>
+<text x="1189" y="1248" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">AutomationRules</text>
+<text x="1189" y="1291" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">-commands: Subject&lt;HomeEvent&gt;</text>
+<text x="1189" y="1317" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">+onEvent(event)</text>
+<polyline points="1175,1273 1110,1273 1110,645 1060,645" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#tri)" />
+<rect x="545" y="850" width="475" height="175" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M546,851 H1019 V917 H546 Z" fill="#fff4df"/><path d="M545,918 H1020" stroke="#64748b" stroke-width="1.5"/>
+<text x="559" y="873" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«visitor»</text>
+<text x="559" y="903" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">SecurityAuditVisitor</text>
+<text x="559" y="946" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">Visitor side reference</text>
+<text x="559" y="972" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">event.room().accept(new visitor)</text>
+<text x="559" y="998" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">result becomes SecurityReport</text>
+<polyline points="1175,1060 1060,1060 1060,940 1020,940" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#arrow)" />
+<text x="1025" y="1090" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#334155" font-weight="normal">room audit</text>
+<rect x="35" y="1450" width="720" height="145" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M36,1451 H754 V1517 H36 Z" fill="#eaf1f7"/><path d="M35,1518 H755" stroke="#64748b" stroke-width="1.5"/>
+<text x="49" y="1473" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«class»</text>
+<text x="49" y="1503" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">Main</text>
+<text x="49" y="1546" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">One composition root; creates sources, listeners and executor</text>
+<text x="49" y="1572" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">Connects all subscriptions; submits three producer tasks</text>
+<rect x="940" y="1450" width="755" height="145" rx="4" fill="white" stroke="#64748b" stroke-width="2"/><path d="M941,1451 H1694 V1517 H941 Z" fill="#eaf1f7"/><path d="M940,1518 H1695" stroke="#64748b" stroke-width="1.5"/>
+<text x="954" y="1473" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#334155" font-weight="normal">«class»</text>
+<text x="954" y="1503" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0f172a" font-weight="bold">ProducerRunner</text>
+<text x="954" y="1546" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">-executor: ExecutorService   -timeout: Duration</text>
+<text x="954" y="1572" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#334155" font-weight="normal">+run(jobs): void   shutdown → awaitTermination → future.get</text>
+<polyline points="755,1525 940,1525" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="9 6" marker-end="url(#arrow)" />
+<text x="789" y="1503" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#334155" font-weight="normal">creates</text>
+<text x="38" y="1628" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#334155" font-weight="normal">Private source snapshot: VersionedRoom(version, room). Eager state creation; constructor injection.</text>
+</svg>

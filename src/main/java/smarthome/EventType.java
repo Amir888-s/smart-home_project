@@ -1,0 +1,3 @@
+package smarthome;
+
+public enum EventType { DEVICE_STATE, ENERGY_SUMMARY, SECURITY_REPORT, AUTOMATION_COMMAND }
